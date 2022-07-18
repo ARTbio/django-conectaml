@@ -10,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
+
 from pathlib import Path
 
 import pymysql
@@ -83,9 +88,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'conectdb',
         'USER': 'mysql',
-        'PASSWORD': '$mysql_password',
-        'HOST': '$mysql_ip',
-        'PORT': '$mysql_port'
+        'PASSWORD': env.str('mysql_password'),
+        'HOST': env.str('mysql_ip'),
+        'PORT': env.str('mysql_port')
         #ssh -L 3333:127.0.0.1:<'3306'> <mysql>@<134.157.183.195> -N : create ssh tunnel
     }
 }
