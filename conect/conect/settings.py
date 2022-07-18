@@ -9,11 +9,12 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import environ
 from pathlib import Path
 
 import pymysql
 pymysql.install_as_MySQLdb()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,9 +83,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'conectdb',
         'USER': 'mysql',
-        'PASSWORD': 'conect-AML$28011965',
-        'HOST': '134.157.183.195',
-        'PORT': '3306'
+        'PASSWORD': '$mysql_password',
+        'HOST': '$mysql_ip',
+        'PORT': '$mysql_port'
         #ssh -L 3333:127.0.0.1:<'3306'> <mysql>@<134.157.183.195> -N : create ssh tunnel
     }
 }
