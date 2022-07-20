@@ -91,7 +91,7 @@ DATABASES = {
         'PASSWORD': env.str('mysql_password'),
         'HOST': env.str('mysql_ip'),
         'PORT': env.str('mysql_port')
-        #ssh -L 3333:127.0.0.1:<'3306'> <mysql>@<134.157.183.195> -N : create ssh tunnel
+        
     }
 }
 
