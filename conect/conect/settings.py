@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig' 
-    
+
 ]
 
 MIDDLEWARE = [
@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'conectdb',
         'USER': 'mysql',
         'PASSWORD': env.str('mysql_password'),
-        'HOST': env.str('mysql_ip'),
+        'HOST': 'localhost',
         'PORT': env.str('mysql_port')
         
     }
